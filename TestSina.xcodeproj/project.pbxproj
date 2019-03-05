@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E1EC0C158DDE2D122B30E41 /* libPods-TestSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48589D400A97D01827A07460 /* libPods-TestSina.a */; };
 		FEF98EA81D0E4D7F008216EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF98EA71D0E4D7F008216EE /* main.m */; };
 		FEF98EAB1D0E4D7F008216EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF98EAA1D0E4D7F008216EE /* AppDelegate.m */; };
 		FEF98EB31D0E4D7F008216EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEF98EB21D0E4D7F008216EE /* Assets.xcassets */; };
@@ -23,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48589D400A97D01827A07460 /* libPods-TestSina.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestSina.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		492DE7271D142845F022868E /* Pods-TestSina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSina.release.xcconfig"; path = "Target Support Files/Pods-TestSina/Pods-TestSina.release.xcconfig"; sourceTree = "<group>"; };
+		656DC9AEED9D48B85D9A4779 /* Pods-TestSina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestSina.debug.xcconfig"; path = "Target Support Files/Pods-TestSina/Pods-TestSina.debug.xcconfig"; sourceTree = "<group>"; };
 		FEF98EA31D0E4D7F008216EE /* TestSina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF98EA71D0E4D7F008216EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEF98EA91D0E4D7F008216EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,17 +59,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E1EC0C158DDE2D122B30E41 /* libPods-TestSina.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D62EF5D80FF284582FF2E28A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48589D400A97D01827A07460 /* libPods-TestSina.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCCB0C703F2B647293F7AD26 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				656DC9AEED9D48B85D9A4779 /* Pods-TestSina.debug.xcconfig */,
+				492DE7271D142845F022868E /* Pods-TestSina.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FEF98E9A1D0E4D7F008216EE = {
 			isa = PBXGroup;
 			children = (
 				FEF98EA51D0E4D7F008216EE /* TestSina */,
 				FEF98EA41D0E4D7F008216EE /* Products */,
+				FCCB0C703F2B647293F7AD26 /* Pods */,
+				D62EF5D80FF284582FF2E28A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +156,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEF98EBA1D0E4D7F008216EE /* Build configuration list for PBXNativeTarget "TestSina" */;
 			buildPhases = (
+				75882316B8948BBEB185079C /* [CP] Check Pods Manifest.lock */,
 				FEF98E9F1D0E4D7F008216EE /* Sources */,
 				FEF98EA01D0E4D7F008216EE /* Frameworks */,
 				FEF98EA11D0E4D7F008216EE /* Resources */,
@@ -187,6 +213,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		75882316B8948BBEB185079C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestSina-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FEF98E9F1D0E4D7F008216EE /* Sources */ = {
@@ -307,6 +358,7 @@
 		};
 		FEF98EBB1D0E4D7F008216EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 656DC9AEED9D48B85D9A4779 /* Pods-TestSina.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestSina/Info.plist;
@@ -318,6 +370,7 @@
 		};
 		FEF98EBC1D0E4D7F008216EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 492DE7271D142845F022868E /* Pods-TestSina.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestSina/Info.plist;

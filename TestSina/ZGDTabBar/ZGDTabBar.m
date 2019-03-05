@@ -53,7 +53,7 @@
     CGFloat width = self.width / 5;
     self.plusBtn.width = width;
     self.plusBtn.height = self.height;
-    self.plusBtn.y = 0;
+    self.plusBtn.y = 30;
     NSInteger index = 0;
     
     for (UIView *view in self.subviews) {

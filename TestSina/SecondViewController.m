@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor orangeColor];
+    NSLog(@"我是控制器3");
 }
 
 - (void)didReceiveMemoryWarning {
